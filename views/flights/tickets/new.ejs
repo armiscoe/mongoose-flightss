@@ -1,0 +1,32 @@
+<form
+  action="/flights/<%= flightId %>/tickets"
+  autocomplete="off"
+  class="flights-form"
+  method="POST"
+>
+  <div>
+    <div class="form-group">
+      <label for="seat">Seat Number</label>
+      <input
+        placeholder="A-F, 1-99"
+        class="form-control"
+        name="seat"
+        required
+        pattern="[A-F][1-9]\d?"
+      />
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input name="price" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Add Ticket</button>
+  </div>
+</form>
